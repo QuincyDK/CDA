@@ -1,0 +1,157 @@
+body{
+	margin:0 auto;
+	color:#000;
+	height:100%;
+}
+a:link{
+	color: red;
+	text-decoration:  none;
+	}
+a:visited{
+	color: gold;
+	text-decoration: none;
+	font-weight: bold;
+	}
+
+
+html{
+	height:100%;
+}
+h1{
+	margin:0;
+}
+p{
+	margin:0;
+	line-height:20px;
+}
+ul{
+	list-style-type:none;
+	padding-left:10px
+}
+a:hover{
+	color: blue;
+	font-weight: bold;
+	}
+	
+ul ul{
+	list-style-type:circle;
+	padding-left:20px;
+}
+h2{
+	color:red;
+}
+.projectnaam, .projectinhoud, .projectopties{
+	border-top:solid 1px;
+}
+.titeldb{
+	color: blue;
+	background-color: #4682b4;
+	text-align: center;
+	border-radius: 20px;
+}
+#inside table.tableProfiel{
+	width:800px;
+}
+#inside th, td.tableProfielInfo{
+	border:solid 1px;
+	text-align:left;
+	width:100px;
+}
+#accordion .ui-accordion-content{
+	padding-top:20px;
+	background-color: #4682b4;
+	margin-top: -28px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius:20px;
+	padding-left: 20px;
+}
+#header{
+	background-image:url(lay/header.jpg);
+	border-radius:15px 15px 0 0;
+	-moz-border-radius:15px 15px 0 0;
+	-webkit-border-radius:15px 15px 0 0;
+	-o-border-radius:15px 15px 0 0;
+	width:1024px;
+	height:150px;
+	margin:0 auto;
+}
+#container{
+	width:1024px;
+	margin:auto;
+	margin-top: -1px;
+	padding: -1px;
+	height:auto;
+	display:table;
+}
+#menu{
+	text-align: left;
+	width:220px;
+	background-color:#00A54F;
+	float:left;
+}
+ul{
+	margin:10px;
+	list-style: url(http://nadeausoftware.com/sites/nadeausoftware.com/files/bullets/arrow_10x10_large.png);
+}
+#ulmenu{
+	margin-bottom:25px;
+}
+#login li{
+	float:left;
+	padding:10px;
+}
+#adminpanel{
+	padding:10px;
+}
+#content{
+	width:574px;
+	background-color:#FFF;
+	float:left;
+	margin-left: 5px;
+}
+#media{
+	width:220px;
+	background-color:#00A54F;
+	float:right;
+	position:relative;
+}
+.clear{
+	clear:both;
+}
+#footer{
+	width:1024px;
+	height:50px;
+	background-color:#CCC;
+	margin: auto;
+	font-size:10px;
+	border-radius:0 0 15px 15px;
+	-moz-border-radius:0 0 15px 15px;
+	-webkit-border-radius:0 0 15px 15px;
+	-o-border-radius:0 0 15px 15px;
+}
+#copyright{
+	margin:20px 0 0 20px;
+	float:left;
+}
+#author{
+	margin:20px 20px 0 0;
+	float:right;
+}
+
+.projectblok{
+	border-radius:15px 15px 15px 15px;
+	-moz-border-radius:15px 15px 15px 15px;
+	-webkit-border-radius:15px 15px 15px 15px;
+	-o-border-radius:15px 15px 15px 15px;
+	background-color: green;
+	margin: 10px;
+	}
+
+.reactieblok{
+	border-radius:15px 15px 15px 15px;
+	-moz-border-radius:15px 15px 15px 15px;
+	-webkit-border-radius:15px 15px 15px 15px;
+	-o-border-radius:15px 15px 15px 15px;
+	background-color: lightgreen;
+	margin: 10px;
+	}

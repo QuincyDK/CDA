@@ -1,0 +1,73 @@
+body{
+margin:0 auto;
+color:#000;
+}
+h1{
+margin:0;
+}
+p{
+margin:0;
+}
+ul{
+list-style-type:none;
+padding-left:10px
+}
+ul ul{
+list-style-type:circle;
+padding-left:20px;
+}
+.projectnaam, .projectinhoud, .projectopties{
+border-top:solid 1px;
+}
+#header{
+background-image:url(lay/header.jpg);
+border-radius:15px 15px 0 0;-moz-border-radius:15px 15px 0 0;-webkit-border-radius:15px 15px 0 0;-o-border-radius:15px 15px 0 0;
+width:1024px;
+height:150px;
+margin:0 auto;
+}
+#accountpanel{
+width:280px;
+height:150px;
+float:right;
+}
+#container{
+width:1024px;
+margin:auto;
+height:auto;
+background-color:#093;
+}
+#menu{
+width:175px;
+background-color:#00A54F;
+display:table-cell;
+}
+#content{
+width:624px;
+height:100%;
+background-color:#FFF;
+display:table-cell;
+}
+#media{
+width:225px;
+background-color:#00A54F;
+display:table-cell;
+}
+#clear{
+clear:both;
+}
+#footer{
+width:1024px;
+height:50px;
+background-color:#CCC;
+margin:auto;
+border-radius:0 0 15px 15px;-moz-border-radius:0 0 15px 15px;-webkit-border-radius:0 0 15px 15px;-o-border-radius:0 0 15px 15px;
+}
+#copyright{
+margin:15px 0 0 15px;
+float:left;
+}
+#author{
+margin:15px 15px 0 0;
+float:right;
+}
