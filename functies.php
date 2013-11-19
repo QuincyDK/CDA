@@ -426,8 +426,6 @@ require_once("login/classes/Login.php");
 				$projdata = $row["data_projecten"];
 				$projwijk = $row["wijknr_projecten"];
 				print '
-				<div class="inhoud">
-					<div id="accordion">
 				<div class="projectnaam">
 					<h3>'.$projname.' -- ID '.$projid. ' -- WIJK '.$projwijk.'</h3>
 				</div>
@@ -447,7 +445,8 @@ require_once("login/classes/Login.php");
 						CKEDITOR.replace( \'reactie\' );
 					};
 				</script>
-				<input type="submit" id="replymes" name="replymes" value="Sla op!"></input>';
+				<input type="submit" id="replymes" name="replymes" value="Sla op!"></input>
+				</div>';
 			}
 		} else {
 			if (isset($_POST['replymes'])){
