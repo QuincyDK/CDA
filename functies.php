@@ -427,7 +427,7 @@ require_once("login/classes/Login.php");
 				$projwijk = $row["wijknr_projecten"];
 				print '
 				<div class="projectnaam">
-					<h3>'.$projname.' -- ID '.$projid. ' -- WIJK '.$projwijk.'</h3>
+					<h3>'.$projname.' -- ID '.$projid. ' -- WIJK '.$projwijk.'</h3> ONZIN
 				</div>
 				<div class="projectinhoud">
 					'.$projdata.'
