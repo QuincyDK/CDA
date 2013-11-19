@@ -426,6 +426,8 @@ require_once("login/classes/Login.php");
 				$projdata = $row["data_projecten"];
 				$projwijk = $row["wijknr_projecten"];
 				print '
+				<div class="inhoud">
+					<div id="accordion">
 				<div class="projectnaam">
 					<h3>'.$projname.' -- ID '.$projid. ' -- WIJK '.$projwijk.'</h3>
 				</div>
