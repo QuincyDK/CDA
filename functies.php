@@ -446,6 +446,7 @@ require_once("login/classes/Login.php");
 					};
 				</script>
 				<input type="submit" id="replymes" name="replymes" value="Sla op!"></input>
+				</div>
 				</div>';
 			}
 		} else {
