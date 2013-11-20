@@ -330,7 +330,7 @@ require_once("login/classes/Login.php");
 			</div>';
 		}
 		print '</div>
-			   </div>';
+			   ';
 
 	}	
 
