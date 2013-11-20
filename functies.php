@@ -330,7 +330,7 @@ require_once("login/classes/Login.php");
 			</div>';
 		}
 		print '</div>
-			   ';
+			   </div>';
 
 	}	
 
@@ -478,6 +478,7 @@ require_once("login/classes/Login.php");
 					window.onload = function()
 					{ 
 					CKEDITOR.replace( \'bewerk\' );
+					
 					};
 					</script>
 					<input type="submit" id="verstuur" name="verstuur" value="Sla op!"></input>
