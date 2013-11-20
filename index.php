@@ -42,7 +42,8 @@ include_once 'functies.php';
 								RetrieveEdit();						
 							}						
 							if (isset($_GET['pg']) && $_GET['pg'] == "reply"){							
-								ReplyMessage();						
+								ReplyMessage();		
+								print "</div>";
 							}						
 							if (isset($_GET['pg']) && $_GET['pg'] == "inloggen"){
 								// include the configs / constants for the database connection

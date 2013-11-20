@@ -481,7 +481,7 @@ require_once("login/classes/Login.php");
 					
 					};
 					</script>
-					<input type="submit" id="verstuur" name="verstuur" value="Sla op!"></input>
+					<input type="submit" id="verstuur" name="verstuur" value="Sla op!" />
 				</form>
 				</div>';
 			}
