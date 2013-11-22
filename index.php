@@ -19,7 +19,8 @@ include_once 'functies.php';
 	<body>		
 		<div id="header"></div>
 			<div id="container">			
-				<div id="menu">					
+				<div id="menu">			
+TEST				
 					<?php
 						LoadAdmin();
 					?>
