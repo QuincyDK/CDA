@@ -20,7 +20,7 @@ include_once 'functies.php';
 		<div id="header"></div>
 			<div id="container">			
 				<div id="menu">			
-TEST				
+TESTt				
 					<?php
 						LoadAdmin();
 					?>
