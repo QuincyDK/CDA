@@ -22,6 +22,7 @@ include_once 'functies.php';
 				<div id="menu">			
 TESTt				
 					<?php
+						print 'test';
 						LoadAdmin();
 					?>
 					<h2>Menu</h2>				
