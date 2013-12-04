@@ -73,6 +73,21 @@ TESTt
 							if (isset($_GET['pg']) && $_GET['pg'] == "registreer"){
 								RegistrationPage();			
 							}
+							if (isset($_GET['pg']) && $_GET['pg'] == "reactions"){
+								if($_GET['newrec'] == true){
+									}
+								else
+								{
+									$postid = $_GET['id'];
+									$post = mysqli_query($connectres, "SELECT * FROM projecten where id = $postid");
+									$naam = $post['naam_projecten'];
+									$data = $post['data_projecten'];
+									$wijk = $post['wijknr_projecten'];
+									$user = $post['gebruiker_projecten'];
+									$datum = $post['datum_projecten'];
+									$userid = $post['gebruikerid_projecten'];
+									
+								print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$user\"> $user</a>";
 						}				
 					?>
 					</div>

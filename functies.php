@@ -107,7 +107,7 @@ require_once("login/classes/Login.php");
 			echo'
 			<table class="tableProfiel">
 				<tr>
-					<th class="tableProfielInfo">Naam</td>
+					<th class="tableProfielInfo">Naam</th>
 					<th class="tableProfielInfo">Achternaam</th>
 					<th class="tableProfielInfo">woonplaats</th>';
 					$login = new Login();
