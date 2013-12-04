@@ -21,7 +21,6 @@ include_once 'functies.php';
 			<div id="container">			
 				<div id="menu">						
 					<?php
-						print 'test';
 						LoadAdmin();
 					?>
 					<h2>Menu</h2>				
@@ -35,6 +34,7 @@ include_once 'functies.php';
 					<div id="inside">
 					<?php
 						if ((isset($_GET['pg']) && $_GET['pg'] == "home") || (!isset($_GET['pg']))){
+						print "FTP";
 							RetrieveLatest();					
 						} 					
 						else 
