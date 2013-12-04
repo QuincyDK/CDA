@@ -145,7 +145,8 @@ require_once("login/classes/Login.php");
 				</tr>';
 			echo'
 				</table>
-			</div>;
+			</div>
+			</div>';
 			}
 		}
 		else
