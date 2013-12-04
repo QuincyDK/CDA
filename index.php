@@ -25,8 +25,9 @@ include_once 'functies.php';
 					?>
 					<h2>Menu</h2>				
 					<ul id="ulmenu">					
-						<?php						
-							/*loadmenu();	*/				
+						<?php				
+							print "TEST";
+							loadmenu();				
 						?>				
 					</ul>
 				</div>			
