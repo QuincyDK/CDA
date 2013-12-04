@@ -88,7 +88,9 @@ TESTt
 									$userid = $post['gebruikerid_projecten'];
 									
 								print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$user\"> $user</a>";
-						}				
+						}
+					}
+				}
 					?>
 					</div>
 				</div>
