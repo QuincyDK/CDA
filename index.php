@@ -90,7 +90,7 @@ TESTt
 									print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$postuser\"> $user</a> op $datum in $wijk<br />";
 									print "$data <br />";
 									
-									$retrep = mysqli_query($connectres, "select * from replies where post_replies=$id");
+									$retrep = mysqli_query($connectres, "select * from replies where post_replies=$id") or die(mysqli_error($connectres));
 									while (mysqli_fetch_assoc($retrep)){
 										$r_id = $retrep['id_replies'];
 										$r_data = $retrep['data_replies'];
@@ -111,8 +111,7 @@ TESTt
 											$usr = $_SESSION['userName'];
 											$query = mysqli_query($connectres, "Insert Into replies 
 											(data_replies, user_replies, date_replies, post_replies)
-											values ($newdata, $usr, SYSDATE, $postid)") or die(mysqli_error($connectres);
-											
+											values ($newdata, $usr, SYSDATE, $postid)") or die(mysqli_error($connectres));								
 										}
 										Print "<form action=\"post\" name=\"newrec\">
 										<textarea id=\"bewerk\" name=\"bewerk\"></textarea>
