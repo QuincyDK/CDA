@@ -74,13 +74,6 @@ TESTt
 								RegistrationPage();			
 							}
 							if (isset($_GET['pg']) && $_GET['pg'] == "reactions"){
-								if($_GET['newrec'] == true){
-									}
-								else
-								{
-								include 'cr.php';
-								global $connectres;
-								
 									$postid = $_GET['id'];
 									$post = mysqli_query($connectres, "SELECT * FROM projecten where id_projecten = $postid");
 									$post = mysqli_fetch_assoc($post) or die(mysqli_error($connectres));
@@ -94,8 +87,45 @@ TESTt
 									$retrusr = mysqli_fetch_assoc($retrusr) or die(mysqli_error($connectres));
 									$postuser = $retrusr['user_name'];
 									
-								print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$postuser\"> $user</a>";
-						}
+									print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$postuser\"> $user</a> op $datum in $wijk<br />";
+									print "$data <br />";
+									
+									$retrep = mysqli_query($connectres, "select * from replies where post_replies=$id");
+									while (mysqli_fetch_assoc($retrep)){
+										$r_id = $retrep['id_replies'];
+										$r_data = $retrep['data_replies'];
+										$r_user = $retrep['user_replies'];
+										$r_uid = $retrep['userid_replies'];
+										$r_date = $retrep['date_replies'];
+										$r_userquery = mysqli_query($connectres, "SELECT user_name from users where user_id = $r_uid");
+										$r_userquery = mysqli_fetch_assoc($r_userquery) or die(mysqli_error($connectres));
+										$r_userfull = $r_userquery['user_name'];
+										print "<div style=\"border: 1px solid\">
+											#$r_id <a href=\"profielen.php?link=bekijkprofiel&profiel=$r_user\"> $r_userfull</a> heeft op $r_date het volgende geplaatst: <br />
+											$r_data";
+											}
+									
+									if($_GET['newrec'] == true){
+										if(isset($_POST['verstuur'])){
+											$newdata = $_POST['bewerk'];
+											$usr = $_SESSION['userName'];
+											$query = mysqli_query($connectres, "Insert Into replies 
+											(data_replies, user_replies, date_replies, post_replies)
+											values ($newdata, $usr, SYSDATE, $postid)") or die(mysqli_error($connectres);
+											
+										}
+										Print "<form action=\"post\" name=\"newrec\">
+										<textarea id=\"bewerk\" name=\"bewerk\"></textarea>
+										<script type=\"text/javascript\">
+										window.onload = function()
+										{ 
+										CKEDITOR.replace( \'bewerk\' );
+										};
+										</script>
+										<input type=\"submit\" id=\"verstuur\" name=\"verstuur\" value=\"Sla op!\"></input>
+										</form>";
+									}
+
 					}
 				}
 					?>
