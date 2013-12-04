@@ -19,8 +19,7 @@ include_once 'functies.php';
 	<body>		
 		<div id="header"></div>
 			<div id="container">			
-				<div id="menu">			
-TESTt				
+				<div id="menu">						
 					<?php
 						print 'test';
 						LoadAdmin();
