@@ -90,8 +90,11 @@ TESTt
 									$user = $post['gebruiker_projecten'];
 									$datum = $post['datum_projecten'];
 									$userid = $post['gebruikerid_projecten'];
+									$retrusr = mysqli_query($connectres, "SELECT user_name from users where user_id = $userid");
+									$retrusr = mysqli_fetch_assoc($retrusr) or die(mysqli_error($connectres));
+									$postuser = $retrusr['user_name'];
 									
-								print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$user\"> $user</a>";
+								print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$postuser\"> $user</a>";
 						}
 					}
 				}
