@@ -29,7 +29,6 @@
 					<?php
 						if (!isset($_GET['eigen'])){
 						gebruikersProfielen();
-						print "</div>";
 							}
 							else
 							{

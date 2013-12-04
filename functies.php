@@ -98,6 +98,7 @@ require_once("login/classes/Login.php");
 	}
  
 	function gebruikersProfielen(){
+	global $connectres;
 		//$connectres = mysqli_connect("localhost","qdekos1q_cda", "cda123", "qdekos1q_cda_db");
 		if((isset($_SESSION['userName'])) && ($_SESSION['userName'] == $_GET['profiel'])){
 			ShowOwnProfile($connectres);
@@ -144,9 +145,7 @@ require_once("login/classes/Login.php");
 					<td class="tableProfielInfo"><a href="profielen.php?link=bekijkprofiel&profiel='.$naam.'">Bekijk het profiel</a></td>
 				</tr>';
 			echo'
-				</table>
-			</div>
-			</div>';
+				</table>';
 			}
 		}
 		else
@@ -223,7 +222,6 @@ require_once("login/classes/Login.php");
 		// load the login class
 		require_once("login/classes/Login.php");
 		global $connectres;
-		include "cr.php";
 		// Check connection
 		$login = new Login();
 		if ($login->isUserLoggedIn() == true) {

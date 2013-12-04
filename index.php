@@ -78,6 +78,7 @@ TESTt
 									}
 								else
 								{
+								global $connectres;
 									$postid = $_GET['id'];
 									$post = mysqli_query($connectres, "SELECT * FROM projecten where id = $postid");
 									$naam = $post['naam_projecten'];
