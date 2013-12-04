@@ -79,8 +79,10 @@ TESTt
 								else
 								{
 								global $connectres;
+								
 									$postid = $_GET['id'];
 									$post = mysqli_query($connectres, "SELECT * FROM projecten where id = $postid");
+									$post = mysqli_fetch_assoc($post);
 									$naam = $post['naam_projecten'];
 									$data = $post['data_projecten'];
 									$wijk = $post['wijknr_projecten'];
