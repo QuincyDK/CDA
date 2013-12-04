@@ -2,7 +2,7 @@
 	// include the configs / constants for the database connection
 require_once("login/config/db.php");
 include_once 'db_connect.php';
-require_once("CR.php");
+include_once("CR.php");
 /*require_once("login/libraries/password_compatibility_library.php");*/
 require_once("login/classes/Login.php");
 
