@@ -144,7 +144,8 @@ require_once("login/classes/Login.php");
 					<td class="tableProfielInfo"><a href="profielen.php?link=bekijkprofiel&profiel='.$naam.'">Bekijk het profiel</a></td>
 				</tr>';
 			echo'
-				</table>';
+				</table>
+			</div>;
 			}
 		}
 		else
