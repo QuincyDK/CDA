@@ -6,6 +6,7 @@ include_once 'functies.php';
 	<head>		
 		<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>		
 		<title>Hart voor Amersfoort</title>		
+		<!-- Test Comment-->
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">		
 		<script type="text/javascript" src="scripts/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="scripts/jquery-ui-1.10.3.custom.min.js"></script>
@@ -26,7 +27,6 @@ include_once 'functies.php';
 					<h2>Menu</h2>				
 					<ul id="ulmenu">					
 						<?php				
-							print "TEST";
 							loadmenu();				
 						?>				
 					</ul>
