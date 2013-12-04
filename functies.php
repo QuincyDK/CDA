@@ -456,9 +456,10 @@ require_once("login/classes/Login.php");
 		}
 	}
 	Function ReplyPage(){
+		global $connectres;
 		$postid = $_GET['id'];
-		$post = mysqli_query($connectres, "SELECT * FROM projecten where id_projecten = $postid");
-		$post = mysqli_fetch_assoc($post) or die(mysqli_error($connectres));
+		$post = mysqli_query($connectres, "SELECT * FROM projecten where id_projecten = $postid") or die(mysqli_error($connectres));
+		$post = mysqli_fetch_assoc($post);
 		$naam = $post['naam_projecten'];
 		$data = $post['data_projecten'];
 		$wijk = $post['wijknr_projecten'];

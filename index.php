@@ -77,7 +77,7 @@ TESTt
 								ReplyPage();
 							}
 
-					}
+					
 				}
 					?>
 					</div>
