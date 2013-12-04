@@ -455,7 +455,59 @@ require_once("login/classes/Login.php");
 			}
 		}
 	}
-
+	Function ReplyPage(){
+		$postid = $_GET['id'];
+		$post = mysqli_query($connectres, "SELECT * FROM projecten where id_projecten = $postid");
+		$post = mysqli_fetch_assoc($post) or die(mysqli_error($connectres));
+		$naam = $post['naam_projecten'];
+		$data = $post['data_projecten'];
+		$wijk = $post['wijknr_projecten'];
+		$user = $post['gebruiker_projecten'];
+		$datum = $post['datum_projecten'];
+		$userid = $post['gebruikerid_projecten'];
+		$retrusr = mysqli_query($connectres, "SELECT user_name from users where user_id = $userid");
+		$retrusr = mysqli_fetch_assoc($retrusr) or die(mysqli_error($connectres));
+		$postuser = $retrusr['user_name'];
+		
+		print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$postuser\"> $user</a> op $datum in $wijk<br />";
+		print "$data <br />";
+		
+		$retrep = mysqli_query($connectres, "select * from replies where post_replies=$postid") or die(mysqli_error($connectres));
+		while ($retrep2 = mysqli_fetch_assoc($retrep)){
+			$r_id = $retrep2['id_replies'];
+			$r_data = $retrep2['data_replies'];
+			$r_user = $retrep2['user_replies'];
+			$r_uid = $retrep2['userid_replies'];
+			$r_date = $retrep2['date_replies'];
+			$r_userquery = mysqli_query($connectres, "SELECT user_name from users where user_id = $r_uid") or die(mysqli_error($connectres));
+			$r_userquery = mysqli_fetch_assoc($r_userquery);
+			$r_userfull = $r_userquery['user_name'];
+			print "<div style=\"border: 1px solid\">
+				#$r_id <a href=\"profielen.php?link=bekijkprofiel&profiel=$r_user\"> $r_userfull</a> heeft op $r_date het volgende geplaatst: <br />
+				$r_data</div>";
+				}
+		
+		if($_GET['newrec'] == true){
+			if(isset($_POST['verstuur'])){
+				$newdata = $_POST['bewerk'];
+				$usr = $_SESSION['userName'];
+				$query = mysqli_query($connectres, "Insert Into replies 
+				(data_replies, user_replies, date_replies, post_replies)
+				values ($newdata, $usr, SYSDATE, $postid)") or die(mysqli_error($connectres));								
+			}
+			Print "<form action=\"post\" name=\"newrec\">
+			<textarea id=\"bewerk\" name=\"bewerk\"></textarea>
+			<script type=\"text/javascript\">
+			window.onload = function()
+			{ 
+			CKEDITOR.replace( \'bewerk\' );
+			};
+			</script>
+			<input type=\"submit\" id=\"verstuur\" name=\"verstuur\" value=\"Sla op!\"></input>
+			</form>";
+			}
+		}
+	
 	Function RetrieveEdit(){
 		global $connectres;
 		include "cr.php";
