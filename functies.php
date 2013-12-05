@@ -285,7 +285,6 @@ require_once("login/classes/Login.php");
 	Function RetrieveLatest(){
 	
 		global $connectres;
-		include "cr.php";
 		print '
 		<h1>Home</h1>
 			<p>Op deze pagina vindt u de laatste vrijwilligersprojecten in en om Amersfoort</p>
@@ -487,25 +486,28 @@ require_once("login/classes/Login.php");
 				#$r_id <a href=\"profielen.php?link=bekijkprofiel&profiel=$r_user\"> $r_userfull</a> heeft op $r_date het volgende geplaatst: <br />
 				$r_data</div>";
 				}
-		
-		if($_GET['newrec'] == true){
+		$login = new Login();
+		if($login->isUserLoggedIn() == true){
 			if(isset($_POST['verstuur'])){
-				$newdata = $_POST['bewerk'];
+				$newdata = $_POST['reactie'];
 				$usr = $_SESSION['userName'];
-				$query = mysqli_query($connectres, "Insert Into replies 
+				print $usr;
+				$date = date("Y-m-d h:i:s");
+				mysqli_query($connectres, "Insert Into replies 
 				(data_replies, user_replies, date_replies, post_replies)
-				values ($newdata, $usr, SYSDATE, $postid)") or die(mysqli_error($connectres));								
+				values ('$newdata', '$usr', '$date', $postid)") or die(mysqli_error($connectres));								
 			}
-			Print "<form action=\"post\" name=\"newrec\">
-			<textarea id=\"bewerk\" name=\"bewerk\"></textarea>
-			<script type=\"text/javascript\">
-			window.onload = function()
-			{ 
-			CKEDITOR.replace( \'bewerk\' );
-			};
-			</script>
-			<input type=\"submit\" id=\"verstuur\" name=\"verstuur\" value=\"Sla op!\"></input>
-			</form>";
+			Print '<form name="reageer" id="reageer" action="" method="post">
+					<!--Naam: <input type="text" name="naam" id="naam" /></br>-->
+					Reactie: <br /><input type="textarea" id="reactie" naam="reactie" />
+				<script type="text/javascript">
+					window.onload = function()
+					{
+						CKEDITOR.replace( \'reactie\' );
+					};
+				</script>
+			<input type="submit" id="verstuur" name="verstuur" value="Sla op!"></input>
+			</form>';
 			}
 		}
 	
