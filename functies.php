@@ -490,6 +490,7 @@ require_once("login/classes/Login.php");
 		if($login->isUserLoggedIn() == true){
 			if(isset($_POST['verstuur'])){
 				$newdata = $_POST['reactie'];
+				print $newdata;
 				$usr = $_SESSION['userName'];
 				print $usr;
 				$date = date("Y-m-d h:i:s");
@@ -499,7 +500,7 @@ require_once("login/classes/Login.php");
 			}
 			Print '<form name="reageer" id="reageer" action="" method="post">
 					<!--Naam: <input type="text" name="naam" id="naam" /></br>-->
-					Reactie: <br /><input type="textarea" id="reactie" naam="reactie" />
+					Reactie: <br /><input type="textarea" id="reactie" name="reactie" />
 				<script type="text/javascript">
 					window.onload = function()
 					{
