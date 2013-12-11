@@ -455,6 +455,8 @@ require_once("login/classes/Login.php");
 		}
 	}
 	Function ReplyPage(){
+	
+	var_dump($_POST);
 		global $connectres;
 		$postid = $_GET['id'];
 		$post = mysqli_query($connectres, "SELECT * FROM projecten where id_projecten = $postid") or die(mysqli_error($connectres));
@@ -468,7 +470,17 @@ require_once("login/classes/Login.php");
 		$retrusr = mysqli_query($connectres, "SELECT user_name from users where user_id = $userid");
 		$retrusr = mysqli_fetch_assoc($retrusr) or die(mysqli_error($connectres));
 		$postuser = $retrusr['user_name'];
-		
+		if(isset($_POST['verstuur'])){
+				
+				$newdata = $_POST['reactie'];
+				print "Reactie is ".$_POST['reactie'];
+				$usr = $_SESSION['userName'];
+				$date = date("Y-m-d h:i:s");
+				mysqli_query($connectres, "INSERT INTO replies 
+				(data_replies, user_replies, date_replies, post_replies)
+				VALUES ('$newdata', '$usr', '$date', $postid)") or die(mysqli_error($connectres));
+				//header('Location: /index.php?pg=reactions&id='.$postid.'&redir=rec');
+			}
 		print "$naam door <a href=\"profielen.php?link=bekijkprofiel&profiel=$postuser\"> $user</a> op $datum in $wijk<br />";
 		print "$data <br />";
 		
@@ -488,16 +500,6 @@ require_once("login/classes/Login.php");
 				}
 		$login = new Login();
 		if($login->isUserLoggedIn() == true){
-			if(isset($_POST['verstuur'])){
-				$newdata = $_POST['reactie'];
-				print $newdata;
-				$usr = $_SESSION['userName'];
-				print $usr;
-				$date = date("Y-m-d h:i:s");
-				mysqli_query($connectres, "Insert Into replies 
-				(data_replies, user_replies, date_replies, post_replies)
-				values ('$newdata', '$usr', '$date', $postid)") or die(mysqli_error($connectres));								
-			}
 			Print '<form name="reageer" id="reageer" action="" method="post">
 					<!--Naam: <input type="text" name="naam" id="naam" /></br>-->
 					Reactie: <br /><input type="textarea" id="reactie" name="reactie" />
@@ -541,6 +543,16 @@ require_once("login/classes/Login.php");
 					<input type="submit" id="verstuur" name="verstuur" value="Sla op!"></input>
 				</form>
 				</div>';
+				?>
+				<script type="text/javascript">
+					$('#edit').on('submit', function (e) {
+						$('#bewerk').val(CKEDITOR.getData());
+						console.log(CKEDITOR.getData());
+						e.preventDefault();
+						return false;
+					});
+				</script>
+				<?php
 			}
 		}
 	}
@@ -551,4 +563,3 @@ require_once("login/classes/Login.php");
 		$dbvar = trim($dbvar);
 		return $dbvar;
 	}
-?>	
